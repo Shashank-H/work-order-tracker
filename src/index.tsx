@@ -2,14 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { AppProvider } from './state/Provider';
+import reportWebVitals from './reportWebVitals'
+
+import './stub';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>
 );
 

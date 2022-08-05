@@ -24,3 +24,6 @@ yarn-error.log*
 
 #lock files
 package-lock.json
+
+#unwanted filedata
+src/constants/data.ts
