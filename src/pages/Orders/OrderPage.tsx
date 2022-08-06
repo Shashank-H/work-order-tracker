@@ -47,7 +47,7 @@ export const OrderPage:React.FC<any>  = ({}) => {
         </AppLinkButton>
       </PageMainRow>
 
-      <OrderTable data={orders} />
+      <OrderTable data-testid="table-container" data={orders} />
     </Page>
   )
 } 

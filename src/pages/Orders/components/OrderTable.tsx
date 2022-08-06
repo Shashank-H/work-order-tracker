@@ -95,7 +95,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({ data }) => {
     };
   },[progress])
 
-  const renderDocName = (value: string) => <TableItem >{value}</TableItem>
+  const renderDocName = (value: string) => <TableItem data-testid="doc-name" >{value}</TableItem>
 
   const renderUploadDate = (msDate:number) => (
     <TableItem center>{new Date(msDate).toDateString().split(' ').splice(1).join(' ')}</TableItem>
