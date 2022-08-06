@@ -9,12 +9,12 @@ createServer({
     this.namespace = "api"
 
     this.get("/work-orders", (schema) => {
-      return JSON.parse(data);
+      let orders = JSON.parse(data).orders.map(({filename, upload_date, order_id}:any) => ({filename,upload_date,order_id}));
+      
+      return {orders};
     })
 
     this.post("/work-orders", (schema,req) => {
-      console.log(req.requestBody);
-      
       let d = JSON.parse(data)
       let newItem=JSON.parse(req.requestBody);
 
@@ -22,8 +22,10 @@ createServer({
       newItem.upload_date = Date.now();
       d.orders.push(newItem)
       updateData(JSON.stringify(d));
-      console.log({d});
-      return d;
+
+      const orders = d.orders.map(({filename, upload_date, order_id}:any) => ({filename,upload_date,order_id}));
+
+      return {orders};
     })
   },
 })
