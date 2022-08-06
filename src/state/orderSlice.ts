@@ -49,8 +49,6 @@ export const { addOrder, loadOrders, updateProgress } = orderSlice.actions
 
 export const loadAllOrders = (): AppThunk => (dispatch,getState) =>{
   getOrders().then((ordrs)=>{
-    let allOrdrs = ordrs.map((o):OrderItem=>({...o,progress:100}));
-    dispatch(loadOrders(allOrdrs));
+    dispatch(loadOrders(ordrs));
   })
-  return "load/order";
 };
