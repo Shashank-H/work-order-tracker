@@ -10,7 +10,7 @@ function uploadWorkOrder(workOrder:any,progressTracker:(p:any) => void): Promise
       'Content-Type': 'application/json'
     }
   })
-  .then((res)=>res.data)
+  .then((res)=>res.data.order)
   .catch((err)=>{
     console.log(err);
   })
