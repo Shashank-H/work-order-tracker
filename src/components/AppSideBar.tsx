@@ -58,7 +58,7 @@ const NavMain = styled.div`
   margin-top:70px;
 `
 
-export const AppSideBar : React.FC<any> = ({}) =>{
+const AppSideBar : React.FC<any> = ({}) =>{
 
   return (
     <SideBar>
@@ -89,3 +89,6 @@ export const AppSideBar : React.FC<any> = ({}) =>{
     </SideBar>
   );
 }
+
+
+export default React.memo(AppSideBar);

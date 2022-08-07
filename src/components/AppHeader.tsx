@@ -1,8 +1,9 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
 import { Head } from './LayoutStyled';
-import { User } from './User';
+import User from './User';
+
 
 const HeadingText = styled.h2`
   font-weight: 700;
@@ -58,7 +59,7 @@ const createNavItem = (title:string) : React.FC<{isActive:boolean}> => ({isActiv
 
 
 
-export const AppHeader: React.FC<any> = ({}) =>{
+const AppHeader: React.FC<any> = ({}) =>{
 
   return (
     <Head>
@@ -75,3 +76,6 @@ export const AppHeader: React.FC<any> = ({}) =>{
     </Head>
   )
 }
+
+
+export default React.memo(AppHeader);

@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components"
 
 const UserContainer = styled.div`
@@ -41,7 +42,7 @@ const Icon = styled.span`
 `
 
 
-export const User : React.FC<any> = ({}) => {
+const User : React.FC<any> = ({}) => {
 
   return (
     <UserContainer>
@@ -56,3 +57,6 @@ export const User : React.FC<any> = ({}) => {
     </UserContainer>
   )
 }
+
+
+export default React.memo(User);

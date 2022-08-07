@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import { PageHeading, PageMainRow } from '../../components/AppCommon';
@@ -6,7 +6,7 @@ import { AppLinkButton } from '../../components/AppLinkButton';
 import { Page } from '../../components/Page';
 import { useAppDispatch, useAppSelector } from '../../state/hooks';
 import { loadAllOrders, selectOrders } from '../../state/orderSlice';
-import { OrderTable } from './components/OrderTable';
+import OrderTable from './components/OrderTable';
 
 
 const Count = styled.div`
@@ -18,7 +18,7 @@ const Count = styled.div`
   color: #000000;
 `
 
-export const OrderPage:React.FC<any>  = ({}) => {
+const OrderPage:React.FC<any>  = ({}) => {
 
   const orders = useAppSelector(selectOrders);
   const dispatch = useAppDispatch()
@@ -51,3 +51,5 @@ export const OrderPage:React.FC<any>  = ({}) => {
     </Page>
   )
 } 
+
+export default React.memo(OrderPage)

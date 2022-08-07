@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -83,7 +83,7 @@ const BackIcon = styled.span`
   cursor: pointer;
 `
 
-export const AddOrderPage:React.FC<any>  = ({}) => {
+const AddOrderPage:React.FC<any>  = ({}) => {
 
   const [file,setFile]= useState<File|undefined>(undefined)
 
@@ -141,3 +141,6 @@ export const AddOrderPage:React.FC<any>  = ({}) => {
     </Page>
   );
 } 
+
+
+export default React.memo(AddOrderPage);

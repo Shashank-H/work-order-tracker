@@ -1,6 +1,6 @@
 import { Progress, Table } from 'antd';
 import Column from 'antd/lib/table/Column';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -80,7 +80,7 @@ interface OrderTableProps {
   data: Array<Order>;
 }
 
-export const OrderTable: React.FC<OrderTableProps> = ({ data }) => {
+const OrderTable: React.FC<OrderTableProps> = ({ data }) => {
 
   const progress = useAppSelector(selectProgress)
 
@@ -147,3 +147,5 @@ export const OrderTable: React.FC<OrderTableProps> = ({ data }) => {
 };
 
 
+
+export default React.memo(OrderTable);
