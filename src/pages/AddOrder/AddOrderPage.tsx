@@ -1,10 +1,9 @@
 import { Button } from 'antd';
 import React, { useState } from 'react';
-import { FileUploader } from 'react-drag-drop-files';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-
 import { PageHeading, PageMainRow } from '../../components/AppCommon';
+import FileSelector from '../../components/FileSelector';
 import { Page } from '../../components/Page';
 import generateOrderItem from '../../services/generateOrder';
 import { uploadWorkOrder } from '../../services/uploadFile';
@@ -122,7 +121,7 @@ const AddOrderPage:React.FC<any>  = ({}) => {
         </BackIcon>
         <UploadPageHead>Upload Work Orders</UploadPageHead>
       </PageMainRow>
-      <FileUploader  handleChange={onSelect} name="file" types={["PDF"]}>
+      <FileSelector handleChange={onSelect} >
         <UploadArea>
           <UploadIcon src={"UploadIcon.png"} />
           <UploadText>
@@ -135,7 +134,7 @@ const AddOrderPage:React.FC<any>  = ({}) => {
             )}
           </UploadText>
         </UploadArea>
-      </FileUploader>
+      </FileSelector>
       <br />
       <UploadBtn disabled={!file} onClick={uploadFile}>Upload</UploadBtn>
     </Page>
